@@ -8,10 +8,10 @@ WORKDIR /app
 
 
 #copiar os arquivos de requesitos para o conteiner
-COPY requirements.txt .
+COPY requeriments.txt .
 
 #instalar as dependencias
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requeriments.txt
 
 #copiar o projeto para dentro do container
 COPY . .
