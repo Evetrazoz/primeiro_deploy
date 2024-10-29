@@ -17,7 +17,7 @@ RUN pip install --no-cache-dir -r requeriments.txt
 COPY . .
 
 #definir a variavel de ambiente para o django  usar o modo de producao
-ENV DJANGO_SETTINGS_MODULE=core.settings
+ENV DJANGO_SETTINGS_MODULE=config.settings
 
 #coletar arquivos estaticos durante o build
 RUN python manage.py collectstatic --noinput
@@ -29,4 +29,4 @@ RUN python manage.py migrate --noinput
 EXPOSE 8000
 
 #rodar o servidor gunicorn para produçao
-CMD ["cunicorn", "--bind", "0.0.0.0:8000", "core.wsgi:application"]
+CMD ["cunicorn", "--bind", "0.0.0.0:8000", "config.wsgi:application"]
