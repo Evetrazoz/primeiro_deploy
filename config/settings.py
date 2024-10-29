@@ -167,7 +167,8 @@ import os
 DB_URL = config('DB_URL', default=os.environ.get('DB_URL', None))
 DATABASES = {
     'default': dj_database_url.config(
-    default=DB_URL
+    default=DB_URL,
+    engine='django.db.backends.postgresql',
     )
 }
 
