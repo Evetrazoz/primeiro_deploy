@@ -149,7 +149,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
@@ -165,11 +164,21 @@ import dj_database_url
 import os
 
 DB_URL = config('DB_URL', default=os.environ.get('DB_URL', None))
+# DATABASES = {
+#     'default': dj_database_url.config(
+#     default=DB_URL,
+#     engine='django.db.backends.postgresql',
+#     )
+# }
 DATABASES = {
-    'default': dj_database_url.config(
-    default=DB_URL,
-    engine='django.db.backends.postgresql',
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',  # Nome do banco de dados
+        'USER': 'postgres.xwvrqavbwyewcoucukkz',  # Usuário
+        'PASSWORD': 'Talysson17-',  # Senha
+        'HOST': 'aws-0-sa-east-1.pooler.supabase.com',  # Host
+        'PORT': '6543',  # Porta
+    }
 }
 
 CORS_ALLOWED_ORIGINS = [

@@ -3,6 +3,7 @@ FROM python:3.10-slim
 
 
 
+
 #definir o diretorio de traabalho no container
 WORKDIR /app
 
