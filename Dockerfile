@@ -30,4 +30,4 @@ RUN python manage.py migrate --noinput
 EXPOSE 8000
 
 #rodar o servidor gunicorn para produçao
-CMD ["cunicorn", "--bind", "0.0.0.0:8000", "config.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "config.wsgi:application"]
